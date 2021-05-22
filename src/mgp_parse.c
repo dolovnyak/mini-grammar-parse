@@ -113,7 +113,7 @@ int	mgp_parse(const t_mgp *mgp, const char *line, void *data)
 	i = 0;
 	while (i < mgp->grammar_rules_num)
 	{
-		bzero(lexemes_data, sizeof(lexemes_data)); //TODO change bzero to custom func
+		bzero(lexemes_data, sizeof(lexemes_data));
 		if (grammar_rule_matches_line(&mgp->grammar_rules[i], line, lexemes_data))
 		{
 			if (mgp->grammar_rules[i].parse_func != NULL)

@@ -23,7 +23,7 @@ static int	add_lexeme_to_grammar_rule(t_grammar_rule *grammar_rule,
 
 	if (grammar_rule->possible_lexemes_num >= MAX_POSSIBLE_LEXEMES_IN_GRAMMAR_RULE)
 		return (mgp_error((const char *[]){"Overflow MAX_POSSIBLE_LEXEMES_IN_GRAMMAR_RULE in token \"", possible_lexemes_tokens, "\"", NULL}));
-	bzero(token, sizeof(token)); //TODO change bzero to custom func
+	bzero(token, sizeof(token));
 	i = 0;
 	j = 0;
 	while (possible_lexemes_tokens[i])
@@ -34,7 +34,7 @@ static int	add_lexeme_to_grammar_rule(t_grammar_rule *grammar_rule,
 				return (mgp_error((const char *[]){"Add lexeme in token \"", token, "\"", NULL}));
 			j = 0;
 			++i;
-			bzero(token, sizeof(token)); //TODO change bzero to custom func
+			bzero(token, sizeof(token));
 		}
 		token[j] = possible_lexemes_tokens[i];
 		i++;
@@ -52,7 +52,7 @@ static int	parse_token(t_lexeme lexemes[MAX_LEXEMES_NUM], const char *body, int 
 	int			i;
 
 	i = 0;
-	bzero(possible_lexemes_tokens, sizeof(possible_lexemes_tokens)); //TODO change bzero to custom func
+	bzero(possible_lexemes_tokens, sizeof(possible_lexemes_tokens));
 	while (body[*index] && body[*index] != ' ')
 	{
 		if (i >= MAX_POSSIBLE_LEXEME_TOKEN_LEN)
@@ -94,7 +94,7 @@ int mgp_grammar_rule_add(t_mgp *mgp, const char *body,
 {
 	t_grammar_rule	tmp_grammar_rule;
 
-	bzero(&tmp_grammar_rule, sizeof(tmp_grammar_rule)); //TODO change bzero to custom func
+	bzero(&tmp_grammar_rule, sizeof(tmp_grammar_rule));
 	if (mgp->grammar_rules_num >= MAX_GRAMMAR_RULES_NUM)
 		return (mgp_error((const char *[]){"Overflow MAX_GRAMMAR_RULES_NUM on rule: ", body, NULL}));
 	if (mgp_strlen(body) >= MAX_GRAMMAR_RULE_LEN)

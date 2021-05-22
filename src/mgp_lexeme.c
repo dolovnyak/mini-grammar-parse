@@ -82,16 +82,3 @@ t_lexeme	*mgp_lexeme_find_by_token(t_lexeme *lexemes, const char *token)
 	}
 	return (NULL);
 }
-
-t_lexeme	*mgp_lexeme_find_by_template(t_lexeme *lexemes, const char *template) //TODO maybe del
-{
-	int i = 0;
-
-	while (i < MAX_LEXEMES_NUM)
-	{
-		if (mgp_strcmp(lexemes[i].template, template) == 0)
-			return &(lexemes[i]);
-		++i;
-	}
-	return (NULL);
-}
