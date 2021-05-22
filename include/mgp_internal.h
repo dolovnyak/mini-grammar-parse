@@ -9,13 +9,9 @@
 #define MGP_SUCCESS 1
 #define MGP_ERROR 0
 
-#define MGP_TRUE 1
-#define MGP_FALSE 0
-
 # define MAX_TEMPLATE_PART_LEN 4 + 1
 
 t_lexeme			*mgp_lexeme_find_by_token(t_lexeme *lexemes, const char *token);
-t_lexeme			*mgp_lexeme_find_by_template(t_lexeme *lexemes, const char *template);
 
 int					mgp_error(const char **error_strings);
 
