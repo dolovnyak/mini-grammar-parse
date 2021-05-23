@@ -19,3 +19,12 @@ gcc main.c ${PATH_TO_LIB_FOLDER}/build/liblibmgp.a -I ${PATH_TO_LIB_FOLDER}/incl
 ```
 Build with your program through `cmake` on `MacOS`:
 -------
+```
+add_executable(${PROJECT_NAME}
+        main.c)
+
+# You need to clone/copy mini-grammar-parse into your repository
+add_subdirectory(mini-grammar-parse)
+target_link_libraries(${PROJECT_NAME} ${MGP_LIB})
+target_include_directories(${PROJECT_NAME} PUBLIC ${MGP_INCLUDE_DIRECTORIES})
+```
