@@ -7,7 +7,8 @@ set(CMAKE_C_STANDARD 99)
 ################################################################################
 # mini-grammar-parse library target
 ################################################################################
-set(MGP_LIB libmgp)
+set(MGP_LIB libmgp
+        CACHE INTERNAL "MGP library" FORCE)
 add_library(${MGP_LIB}
         src/mgp_grammar_rule.c
         src/mgp_lexeme.c
@@ -16,7 +17,8 @@ add_library(${MGP_LIB}
         src/mgp_parse.c
         src/mgp_init.c
         )
-set(MGP_INCLUDE_DIRECTORIES ${CMAKE_SOURCE_DIR}/include)
+set(MGP_INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/include
+        CACHE INTERNAL "MGP include directories" FORCE)
 target_include_directories(${MGP_LIB} PUBLIC ${MGP_INCLUDE_DIRECTORIES})
 
 ################################################################################
@@ -29,5 +31,6 @@ target_include_directories(${MGP_EXAMPLE} PUBLIC ${MGP_INCLUDE_DIRECTORIES})
 target_link_libraries(${MGP_EXAMPLE} ${MGP_LIB})
 set_target_properties(${MGP_EXAMPLE}
         PROPERTIES
-        RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}"
+        RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
         )
+

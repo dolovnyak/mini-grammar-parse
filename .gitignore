@@ -1,5 +1,7 @@
 *cmake-build-debug
 *.idea
 *.DS_Store
+*a.out
+*build
 
 mini-grammar-parse-example
