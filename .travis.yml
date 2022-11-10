@@ -1,8 +1,0 @@
-language: c
-compiler: clang
-os: osx
-osx_image: xcode11.3
-script:
-  - cmake -S . -B build
-  - make -C build
-  - ./mini-grammar-parse-example
