@@ -1,5 +1,7 @@
 # mini-grammar-parse
-## MacOS - [![Build Status](https://www.travis-ci.com/dolovnyak/mini-grammar-parse.svg?branch=master)](https://www.travis-ci.com/dolovnyak/mini-grammar-parse)
+
+## MacOS - ![Build](https://github.com/dolovnyak/mini-grammar-parse/actions/workflows/build.yml/badge.svg?branch=master)
+
 Simple line by line parsing with lexemes and grammar rules
 -------
 
